@@ -1,6 +1,29 @@
 * {
-  background: #abf;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 5.5rem);
+  justify-content: center;
+  padding: 35vh;
+}
+
+.cell {
+  width: 5.5rem;
+  height: 5.5rem;
+  border: 1px solid gainsboro;
+  display: flex;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  align-items: center;
+  justify-content: center;
+  font-size: 5.5rem;
+  font-weight: bold;
+  color: #888;
+}
+
+.cell:hover {
+  background: #eee;
 }
