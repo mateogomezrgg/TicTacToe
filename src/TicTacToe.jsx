@@ -3,60 +3,57 @@ import { useEffect, useState } from "react";
 export const TicTacToe = () => {
   const [turn, setTurn] = useState("X");
 
-  // const [isClicked, setIsClicked] = useState(false);
+  const [ahoraVieneX, setAhoraVieneX] = useState(true);
+
+  const [OcuppedCells, setOcuppedCells] = useState(false);
 
   // const [winner, setWinner] = useState([]);
 
-  // const clicked = () => {
-  //   setIsClicked((current) => !current);
-  //   document.getElementsByClassName("cell")[4].innerHTML = turn;
-  //   console.log(isClicked);
-  // };
-
   const handleClick = () => {
     setTurn((turn) => (turn === "X" ? "O" : "X"));
+    // if (turn === "X" && OcuppedCells === false) {
+    //   setOcuppedCells(true);
+    //   setAhoraVieneX(false);
+    //   turn === "O";
+    // }
+    console.log(OcuppedCells);
   };
 
-  // const createElement = () => {
-  //   turn.map((t) => {
-  //     turn === "X"
-  //       ? (document.getElementsByClassName("cell")[t].innerHTML = {
-  //           handleClick,
-  //         })
-  //       : (document.getElementsByClassName("cell")[t].innerHTML = {
-  //           handleClick,
-  //         });
-  //   });
-  // };
+  const cellClicked = () => {
+    document.getElementById("r1c1").onclick = function () {
+      if (turn === "X") {
+        document.getElementById("r1c1").innerHTML = "X";
+      } else if (turn == "O") {
+        document.getElementById("r1c1").innerHTML = "O";
+      }
+    };
+  };
 
   useEffect(() => {
-    // const divText = document.getElementsByClassName("cell").innerHTML;
-    // if (divText === "") return;
-    // divText === "X" ? "O" : "X";
     if (turn === "X") {
-      document.getElementsByClassName("cell")[7].innerHTML = "X";
+      document.getElementsByClassName("cell")[5].innerHTML = "X";
     } else {
-      document.getElementsByClassName("cell")[7].innerHTML = "O";
+      document.getElementsByClassName("cell")[5].innerHTML = "O";
     }
     console.log("useEffect turn: " + turn);
   }, [turn]);
 
-  console.log(turn);
+  console.log("turno de " + turn);
   return (
     <div className="board">
-      <div className="cell" onClick={handleClick}>
-        X
-      </div>
-      <div className="cell" onClick={handleClick} value="X">
-        O
-      </div>
-      <div className="cell" onClick={handleClick}></div>
-      <div className="cell" onClick={handleClick}></div>
-      <div className="cell" onClick={handleClick}></div>
-      <div className="cell" onClick={handleClick}></div>
-      <div className="cell" onClick={handleClick}></div>
-      <div className="cell" onClick={handleClick}></div>
-      <div className="cell" onClick={handleClick}></div>
+      <div
+        className="cell"
+        id="r1c1"
+        onClick={(handleClick, cellClicked)}
+      ></div>
+      <div className="cell" id="r1c2" onClick={handleClick} value="X"></div>
+      <div className="cell" id="r1c3" onClick={handleClick}></div>
+      <div className="cell" id="r2c1" onClick={handleClick}></div>
+      <div className="cell" id="r2c2" onClick={handleClick}></div>
+      <div className="cell" id="r2c3" onClick={handleClick}></div>
+      <div className="cell" id="r3c1" onClick={handleClick}></div>
+      <div className="cell" id="r3c2" onClick={handleClick}></div>
+      <div className="cell" id="r3c3" onClick={handleClick}></div>
     </div>
   );
 };

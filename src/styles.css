@@ -7,8 +7,6 @@
 .board {
   display: grid;
   grid-template-columns: repeat(3, 5.5rem);
-  justify-content: center;
-  padding: 35vh;
 }
 
 .cell {
@@ -26,4 +24,8 @@
 
 .cell:hover {
   background: #eee;
+}
+
+#r1c1 {
+  background: red;
 }
