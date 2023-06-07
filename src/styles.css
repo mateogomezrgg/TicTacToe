@@ -7,25 +7,74 @@
 .board {
   display: grid;
   grid-template-columns: repeat(3, 5.5rem);
+  justify-content: center;
 }
 
 .cell {
   width: 5.5rem;
   height: 5.5rem;
-  border: 1px solid gainsboro;
   display: flex;
+  border: 1px solid gainsboro;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   align-items: center;
   justify-content: center;
   font-size: 5.5rem;
   font-weight: bold;
-  color: #888;
+  color: #aaa;
 }
 
 .cell:hover {
   background: #eee;
 }
 
-#r1c1 {
-  background: red;
+.turnOf p:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5.5rem;
+}
+
+/* .counterContainer {
+  background: #f00;
+  
+} */
+
+.Counter--X {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  position: relative;
+  background: rgb(181, 0, 0);
+  color: #fff;
+}
+
+.Counter--O {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  position: relative;
+  background: rgb(136, 36, 231);
+  color: #fff;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  width: 264px;
+  height: 55px;
+  border: 1px solid #ccc;
+}
+
+#alert {
+  display: flex;
+  align-self: center;
+  font-size: 1.5rem;
+}
+
+#btnReset {
+  border: 1px solid cadetblue;
+  border-radius: 3px;
+  height: 100%;
 }
